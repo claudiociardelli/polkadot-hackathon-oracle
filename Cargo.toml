@@ -1,0 +1,36 @@
+[package]
+name = "stock_oracle"
+version = "0.1.0"
+edition = "2018"
+authors = ["claudiociardelli <claudio.ciardelli@gmail.com>", "gtsui"]
+description = "Command line stock price query."
+
+[dependencies]
+clap = "3.0.0-beta.2"
+tokio = { version = "1.0", features = ["full"] }
+git-version = "0.3.4"
+reqwest = { version = "0.11.4", features = ["json"] }
+thiserror = "1.0"
+tracing = { version = "0.1", features = ["log"] }
+env_logger = "0.9.0"
+log = "0.4.6"
+#chrono = "0.4.19"
+#jsonrpc-http-server = "18.0.0"
+#parity-scale-codec = "2.0.0"
+#serde_json = "1.0.57"
+#serde = "1.0.116"
+#hex = "0.4.2"
+# kv = { version  "0.22.0", features = ["json-value"] }
+#async-trait = "0.1.40"
+#futures = "0.3.5"
+
+
+
+# Substrate dependencies 
+sp-arithmetic = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.8" }
+
+# Needed to define CurrencyID for Coingeck API. 
+[dependencies.primitives]  
+git = "https://github.com/interlay/interbtc"
+rev = "9051d0d2f0c4584c1c9c70f21edcab1881655cb4"
+package = "interbtc-primitives"
